@@ -1,0 +1,17 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block title %}Página no encontrada | Alke Wallet{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column justify-content-center align-items-center vh-100 w-100 text-center text-white">
+    <div class="container">
+        <h1 class="display-1 fw-bold text-white mb-0">404</h1>
+        <h2 class="h3 fw-bold text-white mb-3">¡Ups! Te has perdido.</h2>
+        <p class="lead mb-5 text-white-50">La página que buscas no existe.</p>
+        <a href="{% url 'index' %}" class="btn btn-light btn-lg px-5 py-3 rounded-pill text-purple fw-bold shadow">
+            <i class="bi bi-house-door-fill me-2"></i>Volver al Inicio
+        </a>
+    </div>
+</div>
+{% endblock %}

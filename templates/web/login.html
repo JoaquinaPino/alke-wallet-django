@@ -1,0 +1,37 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block title %}Iniciar Sesión | Alke Wallet{% endblock %}
+
+{% block content %}
+<section class="d-flex justify-content-center align-items-center">
+    <div class="card shadow-lg p-4" style="width: 22rem">
+        <div class="card-body">
+            <div class="text-center mb-4">
+                <h1 class="h4 class-title">Bienvenido</h1>
+                <p class="text-muted">Inicia sesión en tu billetera</p>
+            </div>
+            <form method="POST" action="">
+               {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username" class="form-label">Nombre de usuario</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Ingresar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/login.js' %}"></script>
+{% endblock %}

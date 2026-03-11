@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #6a11cb;
+    --secondary-color: #2575fc;
+    --accent-color: #00d2ff;
+    --dark-bg: #1a1a2e;
+    --card-bg: #ffffff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+}
+
+.navbar-brand img {
+    height: 30px; 
+    width: auto;
+}
+
+.navbar-brand, .nav-link {
+    color: white !important;
+    font-weight: 500;
+}
+
+.card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    background: var(--card-bg);
+    overflow: hidden;
+}
+
+.card-form-width {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border: none;
+    border-radius: 50px;
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4);
+}
+
+.btn-success {
+    background: #00b09b;
+    background: linear-gradient(to right, #00b09b, #96c93d);
+    border: none;
+    border-radius: 50px;
+}
+
+.text-purple {
+    color: var(--primary-color);
+}
+
+.card-saldo {
+    background: linear-gradient(to right, #8E2DE2, #4A00E0);
+    border: none;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.card-saldo::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+#lista-contactos::-webkit-scrollbar {
+    width: 8px;
+}
+#lista-contactos::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+#lista-contactos::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 4px;
+}
+#lista-contactos::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.input-group-text {
+    border-right: none;
+}
+
+.text-purple-gradient {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}

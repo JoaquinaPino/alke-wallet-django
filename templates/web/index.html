@@ -1,0 +1,20 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block title %}Alke Wallet{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column justify-content-center align-items-center vh-100 w-100 text-center text-white">
+    <div class="container">
+        <img src="{% static 'img/logo.png' %}"
+            alt="Logo Alke Wallet" 
+            class="mb-4 shadow-lg" 
+            width="140" 
+            height="140" 
+            style="background: white; border-radius: 35px; padding: 10px;">
+        <h1 class="display-3 fw-bold mb-3">Tu dinero, <br> al siguiente nivel.</h1>
+        <p class="lead mb-5">Administra tus fondos, transfiere y ahorra con la seguridad que te mereces.</p>
+        <a href="{% url 'login' %}" class="btn btn-light btn-lg px-5 py-3 rounded-pill text-purple fw-bold shadow">Ingresar a mi billetera</a>
+    </div>
+</div>
+{% endblock %}

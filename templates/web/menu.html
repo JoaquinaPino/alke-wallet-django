@@ -1,0 +1,72 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block title %}Menú Principal | Alke Wallet{% endblock %}
+
+{% block content %}
+{% include "web/sidebar.html" %}
+<main class="container mt-5">
+    <h1 class="mb-4 text-white">Hola, 
+        <span id="username" class="fw-bold">{{ request.user }}</span>
+    </h1>
+    <p class="text-white-50 mb-4">Nro Cuenta: <span id="user-account" class="font-monospace text-white">Cargando...</span></p>
+    <div class="card text-white card-saldo mb-4 shadow">
+        <div class="card-header border-0 bg-transparent">Saldo Disponible</div>
+        <div class="card-body">
+            <h2 class="card-title display-4 fw-bold" id="account-balance">$ 0</h2>
+        </div>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 text-center p-3 shadow-sm hover-effect">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <i class="bi bi-piggy-bank-fill fs-1 text-purple-gradient"></i>
+                    </div>
+                    <h5 class="card-title text-primary">Depositar</h5>
+                    <p class="card-text text-muted small">Añade fondos a tu cuenta.</p>
+                    <a href="{% url 'deposit' %}" class="btn btn-primary w-100">Ir a Depositar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 text-center p-3 shadow-sm hover-effect">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <i class="bi bi-send-fill fs-1 text-purple-gradient"></i>
+                    </div>
+                    <h5 class="card-title text-primary">Enviar Dinero</h5>
+                    <p class="card-text text-muted small">Realiza transferencias a contactos.</p>
+                    <a href="{% url 'sendmoney' %}" class="btn btn-primary w-100">Realizar Envío</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 text-center p-3 shadow-sm hover-effect">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <i class="bi bi-clock-history fs-1 text-purple-gradient"></i>
+                    </div>
+                    <h5 class="card-title text-primary">Movimientos</h5>
+                    <p class="card-text">Revisa tu historial de transacciones.</p>
+                    <a href="{% url 'transactions' %}" class="btn btn-primary w-100">Ver Historial</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-5 mb-4">
+        <p class="text-white-50 small mb-2">¿Terminaste por hoy?</p>
+        <form method="post" action="{% url 'logout' %}" class="d-inline">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-light px-4 rounded-pill opacity-75 hover-effect">
+                Cerrar Sesión <i class="bi bi-box-arrow-right ms-2"></i>
+            </button>
+        </form>
+    </div>
+</main>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/baseDeDatos.js' %}"></script>
+<script src="{% static 'js/logica.js' %}"></script>
+{% endblock %}

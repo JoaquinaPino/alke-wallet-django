@@ -1,0 +1,18 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block title %}Acceso Denegado | Alke Wallet{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column justify-content-center align-items-center vh-100 w-100 text-center text-white">
+    <div class="container">
+        <i class="bi bi-shield-lock-fill display-1 text-warning mb-3"></i>
+        <h1 class="display-3 fw-bold text-white mb-3">Error</h1>
+        <h2 class="h4 fw-bold text-white mb-3">Acceso Restringido</h2>
+        <p class="lead mb-5 text-white-50">No tienes los permisos de seguridad necesarios para ver esta página.</p>
+        <a href="{% url 'index' %}" class="btn btn-warning btn-lg px-5 py-3 rounded-pill text-dark fw-bold shadow">
+            <i class="bi bi-arrow-left me-2"></i>Volver a zona segura
+        </a>
+    </div>
+</div>
+{% endblock %}
